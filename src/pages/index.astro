@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Ivan — University Plan 2028" activeTab="home">
@@ -20,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
     </h2>
 
     <div class="grid gap-4 md:grid-cols-3 mt-6">
-      <a href="/melbourne/" class="card group border-melbourne/30 hover:border-melbourne no-underline block">
+      <a href={`${base}melbourne/`} class="card group border-melbourne/30 hover:border-melbourne no-underline block">
         <div class="flex items-center gap-2 mb-3">
           <span class="tier-badge bg-melbourne/20 text-melbourne">A</span>
           <span class="text-xs text-gray-500 uppercase tracking-wider">Aspirational</span>
@@ -49,7 +50,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </a>
 
-      <a href="/waseda/" class="card group border-waseda/30 hover:border-waseda no-underline block">
+      <a href={`${base}waseda/`} class="card group border-waseda/30 hover:border-waseda no-underline block">
         <div class="flex items-center gap-2 mb-3">
           <span class="tier-badge bg-waseda/20 text-waseda">B</span>
           <span class="text-xs text-gray-500 uppercase tracking-wider">Realistic</span>
@@ -78,7 +79,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </a>
 
-      <a href="/shibaura/" class="card group border-shibaura/30 hover:border-shibaura no-underline block">
+      <a href={`${base}shibaura/`} class="card group border-shibaura/30 hover:border-shibaura no-underline block">
         <div class="flex items-center gap-2 mb-3">
           <span class="tier-badge bg-shibaura/20 text-shibaura">C</span>
           <span class="text-xs text-gray-500 uppercase tracking-wider">Safer</span>

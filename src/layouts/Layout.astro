@@ -5,13 +5,14 @@ interface Props {
 }
 
 const { title, activeTab } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 const tabs = [
-  { id: 'home', label: 'Overview', href: '/', icon: '⌂' },
-  { id: 'melbourne', label: 'Melbourne', href: '/melbourne/', icon: 'A', color: 'melbourne' },
-  { id: 'waseda', label: 'Waseda', href: '/waseda/', icon: 'B', color: 'waseda' },
-  { id: 'shibaura', label: 'Shibaura', href: '/shibaura/', icon: 'C', color: 'shibaura' },
-  { id: 'timeline', label: 'Timeline', href: '/timeline/', icon: '◷', color: 'timeline' },
+  { id: 'home', label: 'Overview', href: base, icon: '⌂' },
+  { id: 'melbourne', label: 'Melbourne', href: `${base}melbourne/`, icon: 'A', color: 'melbourne' },
+  { id: 'waseda', label: 'Waseda', href: `${base}waseda/`, icon: 'B', color: 'waseda' },
+  { id: 'shibaura', label: 'Shibaura', href: `${base}shibaura/`, icon: 'C', color: 'shibaura' },
+  { id: 'timeline', label: 'Timeline', href: `${base}timeline/`, icon: '◷', color: 'timeline' },
 ] as const;
 
 const colorMap: Record<string, { active: string; hover: string; border: string; badge: string }> = {
@@ -56,7 +57,7 @@ const colorMap: Record<string, { active: string; hover: string; border: string; 
     <header class="sticky top-0 z-50 bg-surface-900/80 backdrop-blur-xl border-b border-surface-600">
       <div class="max-w-5xl mx-auto px-4">
         <div class="flex items-center justify-between py-4">
-          <a href="/" class="no-underline">
+          <a href={base} class="no-underline">
             <h1 class="text-lg font-bold text-white m-0 tracking-tight">
               Ivan
               <span class="text-gray-500 font-normal ml-1">University Plan 2028</span>
