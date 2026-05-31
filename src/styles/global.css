@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface-900 text-gray-200 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1 { @apply text-3xl md:text-4xl font-bold text-white mb-4; }
+  h2 { @apply text-2xl font-bold text-white mt-10 mb-4; }
+  h3 { @apply text-xl font-semibold text-gray-100 mt-8 mb-3; }
+  h4 { @apply text-lg font-semibold text-gray-200 mt-6 mb-2; }
+
+  p { @apply mb-4 leading-relaxed; }
+  strong { @apply text-white font-semibold; }
+
+  ul { @apply list-disc list-inside mb-4 space-y-1; }
+  ol { @apply list-decimal list-inside mb-4 space-y-1; }
+  li { @apply leading-relaxed; }
+
+  blockquote {
+    @apply border-l-4 border-gray-600 pl-4 py-2 my-4 bg-surface-800 rounded-r-lg italic text-gray-300;
+  }
+
+  hr { @apply border-surface-600 my-8; }
+
+  a { @apply text-blue-400 hover:text-blue-300 underline underline-offset-2 transition-colors; }
+
+  code {
+    @apply bg-surface-700 text-gray-300 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+}
+
+@layer components {
+  .content-table {
+    @apply w-full border-collapse mb-6 text-sm;
+  }
+  .content-table thead {
+    @apply bg-surface-700;
+  }
+  .content-table th {
+    @apply px-4 py-3 text-left font-semibold text-white border-b border-surface-600;
+  }
+  .content-table td {
+    @apply px-4 py-3 border-b border-surface-700;
+  }
+  .content-table tbody tr {
+    @apply hover:bg-surface-700/50 transition-colors;
+  }
+
+  .checklist {
+    @apply list-none space-y-2;
+  }
+  .checklist li {
+    @apply flex items-start gap-2;
+  }
+  .checklist li::before {
+    content: '';
+    @apply inline-block w-4 h-4 mt-1 border-2 border-gray-500 rounded flex-shrink-0;
+  }
+
+  .tier-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider;
+  }
+
+  .card {
+    @apply bg-surface-800 border border-surface-600 rounded-xl p-6 hover:border-surface-600/80 transition-all;
+  }
+
+  .mermaid-container {
+    @apply bg-surface-800 rounded-xl p-4 my-6 overflow-x-auto;
+  }
+  .mermaid-container svg {
+    @apply mx-auto;
+  }
+}

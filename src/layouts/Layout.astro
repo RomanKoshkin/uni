@@ -1,0 +1,138 @@
+---
+interface Props {
+  title: string;
+  activeTab: 'home' | 'melbourne' | 'waseda' | 'shibaura' | 'timeline';
+}
+
+const { title, activeTab } = Astro.props;
+
+const tabs = [
+  { id: 'home', label: 'Overview', href: '/', icon: '⌂' },
+  { id: 'melbourne', label: 'Melbourne', href: '/melbourne/', icon: 'A', color: 'melbourne' },
+  { id: 'waseda', label: 'Waseda', href: '/waseda/', icon: 'B', color: 'waseda' },
+  { id: 'shibaura', label: 'Shibaura', href: '/shibaura/', icon: 'C', color: 'shibaura' },
+  { id: 'timeline', label: 'Timeline', href: '/timeline/', icon: '◷', color: 'timeline' },
+] as const;
+
+const colorMap: Record<string, { active: string; hover: string; border: string; badge: string }> = {
+  melbourne: {
+    active: 'bg-melbourne/15 text-melbourne border-melbourne',
+    hover: 'hover:bg-melbourne/10 hover:text-melbourne',
+    border: 'border-melbourne',
+    badge: 'bg-melbourne/20 text-melbourne',
+  },
+  waseda: {
+    active: 'bg-waseda/15 text-waseda border-waseda',
+    hover: 'hover:bg-waseda/10 hover:text-waseda',
+    border: 'border-waseda',
+    badge: 'bg-waseda/20 text-waseda',
+  },
+  shibaura: {
+    active: 'bg-shibaura/15 text-shibaura border-shibaura',
+    hover: 'hover:bg-shibaura/10 hover:text-shibaura',
+    border: 'border-shibaura',
+    badge: 'bg-shibaura/20 text-shibaura',
+  },
+  timeline: {
+    active: 'bg-timeline/15 text-timeline border-timeline',
+    hover: 'hover:bg-timeline/10 hover:text-timeline',
+    border: 'border-timeline',
+    badge: 'bg-timeline/20 text-timeline',
+  },
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="min-h-screen">
+    <header class="sticky top-0 z-50 bg-surface-900/80 backdrop-blur-xl border-b border-surface-600">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <a href="/" class="no-underline">
+            <h1 class="text-lg font-bold text-white m-0 tracking-tight">
+              Ivan
+              <span class="text-gray-500 font-normal ml-1">University Plan 2028</span>
+            </h1>
+          </a>
+        </div>
+
+        <nav class="flex gap-1 pb-3 overflow-x-auto -mx-1 px-1" aria-label="Main navigation">
+          {tabs.map((tab) => {
+            const isActive = activeTab === tab.id;
+            const colors = tab.color ? colorMap[tab.color] : null;
+
+            return (
+              <a
+                href={tab.href}
+                class:list={[
+                  'flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium no-underline whitespace-nowrap transition-all border border-transparent',
+                  isActive && !colors && 'bg-white/10 text-white border-white/20',
+                  isActive && colors && colors.active,
+                  !isActive && !colors && 'text-gray-400 hover:text-white hover:bg-white/5',
+                  !isActive && colors && `text-gray-400 ${colors.hover}`,
+                ]}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                <span class:list={[
+                  'flex items-center justify-center w-5 h-5 rounded text-xs font-bold',
+                  isActive && colors && colors.badge,
+                  isActive && !colors && 'bg-white/20 text-white',
+                  !isActive && 'bg-surface-700 text-gray-500',
+                ]}>
+                  {tab.icon}
+                </span>
+                {tab.label}
+              </a>
+            );
+          })}
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 md:py-12">
+      <slot />
+    </main>
+
+    <footer class="border-t border-surface-700 mt-16">
+      <div class="max-w-5xl mx-auto px-4 py-6 text-center text-xs text-gray-600">
+        Prepared May 2026 &middot; Mechanical Engineering, 2028 entry
+      </div>
+    </footer>
+
+    <script>
+      import mermaid from 'mermaid';
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'dark',
+        themeVariables: {
+          darkMode: true,
+          background: '#16161d',
+          primaryColor: '#3b82f6',
+          primaryTextColor: '#e5e7eb',
+          primaryBorderColor: '#374151',
+          lineColor: '#6b7280',
+          secondaryColor: '#1e1e28',
+          tertiaryColor: '#272733',
+          fontFamily: 'Inter, system-ui, sans-serif',
+        },
+        gantt: {
+          titleTopMargin: 15,
+          barHeight: 24,
+          barGap: 6,
+          topPadding: 40,
+          sidePadding: 60,
+          fontSize: 12,
+        },
+      });
+      await mermaid.run({ nodes: document.querySelectorAll('.mermaid') });
+    </script>
+  </body>
+</html>

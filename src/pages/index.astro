@@ -1,0 +1,256 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Ivan — University Plan 2028" activeTab="home">
+  <div class="mb-8">
+    <p class="text-gray-400 text-sm uppercase tracking-wider mb-2">Mechanical Engineering &middot; 2028 Entry</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+      Ivan's University Plan
+    </h1>
+    <p class="text-gray-400 mt-3 text-lg">
+      Prepared May 2026. Ivan is finishing 10th grade at OCSI (Okinawa Christian School International).
+      He graduates June 2028 with an American high school diploma. Target field: <strong>mechanical engineering</strong>, taught in English.
+    </p>
+  </div>
+
+  <section class="mb-12">
+    <h2 class="flex items-center gap-2">
+      <span class="text-2xl">Three options at a glance</span>
+    </h2>
+
+    <div class="grid gap-4 md:grid-cols-3 mt-6">
+      <a href="/melbourne/" class="card group border-melbourne/30 hover:border-melbourne no-underline block">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="tier-badge bg-melbourne/20 text-melbourne">A</span>
+          <span class="text-xs text-gray-500 uppercase tracking-wider">Aspirational</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mt-0 mb-1 group-hover:text-melbourne transition-colors">
+          University of Melbourne
+        </h3>
+        <p class="text-sm text-gray-400 mb-3">BSc (Mechanical Systems) &rarr; Master of Engineering</p>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-500">Entry</span>
+            <span class="text-gray-300">Feb 2029</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Tuition / year</span>
+            <span class="text-gray-300">~AUD 54k &rarr; 60k</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Length</span>
+            <span class="text-gray-300">5 years</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Gap</span>
+            <span class="text-gray-300">7 months</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/waseda/" class="card group border-waseda/30 hover:border-waseda no-underline block">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="tier-badge bg-waseda/20 text-waseda">B</span>
+          <span class="text-xs text-gray-500 uppercase tracking-wider">Realistic</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mt-0 mb-1 group-hover:text-waseda transition-colors">
+          Waseda University
+        </h3>
+        <p class="text-sm text-gray-400 mb-3">FSE — Mechanical Engineering, English-based</p>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-500">Entry</span>
+            <span class="text-gray-300">Sept 2028</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Tuition / year</span>
+            <span class="text-gray-300">~&yen;1.8M (~$12k)</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Length</span>
+            <span class="text-gray-300">4 years</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Gap</span>
+            <span class="text-gray-300">3 months</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/shibaura/" class="card group border-shibaura/30 hover:border-shibaura no-underline block">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="tier-badge bg-shibaura/20 text-shibaura">C</span>
+          <span class="text-xs text-gray-500 uppercase tracking-wider">Safer</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mt-0 mb-1 group-hover:text-shibaura transition-colors">
+          Shibaura Institute of Technology
+        </h3>
+        <p class="text-sm text-gray-400 mb-3">IGP — Mechanical Engineering major</p>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-500">Entry</span>
+            <span class="text-gray-300">Sept 2028</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Tuition / year</span>
+            <span class="text-gray-300">~&yen;1.65M (~$11k)</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Length</span>
+            <span class="text-gray-300">4 years</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Gap</span>
+            <span class="text-gray-300">3 months</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="card mt-4 border-surface-600">
+      <p class="text-sm text-gray-400 m-0">
+        <strong class="text-gray-300">Strategy:</strong> Apply to all three. They have non-overlapping application windows and complementary cost/prestige profiles, so a portfolio of three is realistic, not excessive.
+      </p>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2>Master timeline</h2>
+    <div class="mermaid-container">
+      <pre class="mermaid">
+gantt
+    title  Ivan — Master Timeline
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %Y
+
+    section Grade 11 (2026/27)
+    Summer 2026 — SAT prep begins     :2026-06-01, 75d
+    Grade 11 academic year             :2026-08-17, 280d
+    PSAT diagnostic                    :milestone, 2026-10-14, 0d
+    AP exams (year 1)                  :milestone, 2027-05-10, 0d
+    First SAT attempt                  :milestone, 2027-05-01, 0d
+    TOEFL iBT (first attempt)          :milestone, 2027-07-15, 0d
+
+    section Grade 12 (2027/28) — Application phase
+    Grade 12 academic year             :2027-08-16, 280d
+    Melbourne app window opens         :milestone, 2027-08-01, 0d
+    SAT retake (if needed)             :milestone, 2027-10-02, 0d
+    Essays + recommendations          :2027-09-01, 120d
+    Shibaura IGP — fall intake window  :2027-11-04, 14d
+    Waseda EDM — application window    :2028-01-08, 33d
+    Melbourne — submit by              :milestone, 2028-02-01, 0d
+    AP exams (year 2)                  :milestone, 2028-05-08, 0d
+    OCSI graduation                    :milestone, 2028-05-26, 0d
+
+    section Decisions & enrolment
+    Shibaura decision                  :milestone, 2028-03-26, 0d
+    Waseda decision                    :milestone, 2028-03-31, 0d
+    Melbourne — rolling decisions      :2027-09-15, 165d
+    Visa + enrolment paperwork         :2028-04-01, 120d
+    Start at Waseda / Shibaura         :milestone, 2028-09-15, 0d
+    Start at Melbourne (Sem 1 2029)    :milestone, 2029-02-26, 0d
+      </pre>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2>What Ivan must build in the next 24 months</h2>
+    <p class="text-gray-400">
+      Admission isn't a single test — it's a record. Universities read three things in parallel:
+      <strong>academic performance</strong>, <strong>standardized tests</strong>, and <strong>evidence of consistent effort outside the classroom</strong>.
+      The Grade 11 year is the most important record they will see at application time, because Grade 12 first-semester grades arrive late.
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-3 mt-6">
+      <div class="card">
+        <h3 class="mt-0 text-lg">Academic record</h3>
+        <p class="text-sm text-gray-400 mb-3">Target: GPA &ge; 3.5; for Waseda &ge; 3.7</p>
+        <ul class="text-sm space-y-2 list-none pl-0">
+          <li class="flex items-start gap-2">
+            <span class="text-melbourne mt-0.5">&#9679;</span>
+            <span><strong>AP Calculus</strong> — AB in G11, BC in G12</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-melbourne mt-0.5">&#9679;</span>
+            <span><strong>AP Physics</strong> — Physics 1 or C: Mechanics</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-melbourne mt-0.5">&#9679;</span>
+            <span><strong>AP Chemistry</strong> — required at Melbourne</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-melbourne mt-0.5">&#9679;</span>
+            <span>AP exam scores of <strong>4+</strong> in math and physics</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="mt-0 text-lg">Standardized tests</h3>
+        <p class="text-sm text-gray-400 mb-3">Timing matters — see Wall Timeline</p>
+        <table class="content-table text-xs">
+          <thead>
+            <tr><th>Test</th><th>First</th><th>Target</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>PSAT</td><td>Oct 2026</td><td>Diagnostic</td></tr>
+            <tr><td>SAT</td><td>May 2027</td><td>1400+</td></tr>
+            <tr><td>TOEFL</td><td>Jul 2027</td><td>95+</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3 class="mt-0 text-lg">"Showing-up" evidence</h3>
+        <p class="text-sm text-gray-400 mb-3">The part Ivan currently lacks</p>
+        <ul class="text-sm space-y-2 list-none pl-0">
+          <li class="flex items-start gap-2">
+            <span class="text-shibaura mt-0.5">&#9679;</span>
+            <span><strong>One sustained extracurricular</strong> over both years</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-shibaura mt-0.5">&#9679;</span>
+            <span><strong>One hands-on project</strong> per year</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-shibaura mt-0.5">&#9679;</span>
+            <span><strong>One leadership role</strong> in Grade 12</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-shibaura mt-0.5">&#9679;</span>
+            <span><strong>One STEM summer program</strong> between G11/G12</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2>Important honest caveats</h2>
+    <div class="card border-yellow-900/50">
+      <ul class="text-sm space-y-3 list-none pl-0 mb-0">
+        <li class="flex items-start gap-2">
+          <span class="text-yellow-500 mt-0.5 flex-shrink-0">&#9888;</span>
+          <span><strong>All dates for the 2028 entry cycle are inferred from 2026 cycles.</strong> Reconfirm every deadline on the university's website starting June 2027.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-yellow-500 mt-0.5 flex-shrink-0">&#9888;</span>
+          <span><strong>Tuition is the 2026 published rate.</strong> Australian fees in particular rise ~3-5% per year.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-yellow-500 mt-0.5 flex-shrink-0">&#9888;</span>
+          <span><strong>Sophia University's Green Engineering Program is closing</strong> — final intake Autumn 2026, not viable for Ivan.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-yellow-500 mt-0.5 flex-shrink-0">&#9888;</span>
+          <span><strong>University of Tokyo does not offer English-medium undergraduate ME.</strong> PEAK is liberal arts only.</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-yellow-500 mt-0.5 flex-shrink-0">&#9888;</span>
+          <span><strong>Russian passport:</strong> no formal obstacles to Australian or Japanese student visas in 2026. Pay all fees from a Japan-based account.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</Layout>
