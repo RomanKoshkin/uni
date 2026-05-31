@@ -74,3 +74,14 @@ code {
     @apply mx-auto;
   }
 }
+
+.mermaid svg text {
+  fill: #78350f !important;
+}
+.mermaid svg .taskText {
+  fill: #000000 !important;
+}
+.mermaid svg .taskTextOutsideRight,
+.mermaid svg .taskTextOutsideLeft {
+  fill: #78350f !important;
+}
