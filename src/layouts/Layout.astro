@@ -108,10 +108,10 @@ const colorMap: Record<string, { active: string; hover: string; border: string; 
       </div>
     </footer>
 
-    <script>
-      import mermaid from 'mermaid';
+    <script is:inline src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+    <script is:inline>
       mermaid.initialize({
-        startOnLoad: false,
+        startOnLoad: true,
         theme: 'dark',
         themeVariables: {
           darkMode: true,
@@ -133,7 +133,6 @@ const colorMap: Record<string, { active: string; hover: string; border: string; 
           fontSize: 12,
         },
       });
-      await mermaid.run({ nodes: document.querySelectorAll('.mermaid') });
     </script>
   </body>
 </html>
